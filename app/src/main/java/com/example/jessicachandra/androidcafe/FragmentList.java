@@ -24,21 +24,14 @@ public class FragmentList extends Fragment {
 
     return view;
 }
-
     private void setupRecyclerView(View view){
-
-
         RecyclerView recyclerView = view.findViewById(R.id.recyclerview);
-
-
 
         RecyclerAdapter adapter = new RecyclerAdapter(getActivity(),
                 MenuData.getListMenu());
 
-
         recyclerView.setAdapter(adapter);
         LinearLayoutManager manager = new LinearLayoutManager(getActivity());
-
 
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(manager);
