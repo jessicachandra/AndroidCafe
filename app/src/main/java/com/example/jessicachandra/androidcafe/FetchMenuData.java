@@ -24,36 +24,35 @@ public class FetchMenuData extends AsyncTask<Void ,Void, String >{
     protected String doInBackground(Void... params) {
 
 
-        Log.v("aldo","20");
+
         HttpURLConnection urlConnection = null;
         BufferedReader reader = null;
         String forecastJsonStr = null;
 
 
-        Log.v("aldo","21");
         try {
-            Log.v("aldo","31");
+
             URL url = null;
             try {
-                Log.v("aldo","32");
+
                 url = new
                         URL("http://560057.youcanlearnit.net/services/json/itemsfeed.php");
-                Log.v("aldo","33");
+
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
-            Log.v("aldo","34");
+
             try {
-                Log.v("aldo","35");
+
                 urlConnection = (HttpURLConnection) url.openConnection();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            Log.v("aldo","36");
+
             urlConnection.setRequestMethod("GET");
-            Log.v("aldo","37");
+
             urlConnection.connect();
-            Log.v("aldo","38");
+
 
             InputStream inputStream = urlConnection.getInputStream();
             StringBuffer buffer = new StringBuffer();
@@ -93,7 +92,6 @@ public class FetchMenuData extends AsyncTask<Void ,Void, String >{
     protected void onPostExecute(String s) {
 
 
-        Log.v("aldo","22");
         super.onPostExecute(s);
     }
 }
